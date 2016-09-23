@@ -11,5 +11,29 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require rails_bootstrap_forms
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.form-group {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.your_true_gender {
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+input[name="commit"] {
+  margin-left: 25px;
+}
+.your_mailing_address {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.your_mailing_address div {
+  padding: 15px;
+}

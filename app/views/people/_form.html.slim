@@ -1,0 +1,60 @@
+= image_tag "kristeninglogo.png", :class => "img-responsive", :width => "300", :style => "padding: 25px"
+div class="bg-info" style="margin: 25px; padding: 25px; margin-top: 0px"
+  = "Welcome! Many are the roads that lead us here. When we say goodbye to the old self and welcome a new one. It is a special and a blessed path that we get to take in this world. The word 'holy' means to be set apart and that is what you are. You are blessed with the perspective to see both sides of the world. After and during your transition you will experience joys and ecstasies you have never known. It may be a long journey still, but know that you're never really alone and your on the right path back to happiness and life."
+  br
+  br
+  = "Your name and gender change documents will be emailed to you after filling out the form below."
+  br
+  br
+  = "Love,"
+  br
+  = "Janet Evelyn Asteria"
+
+= bootstrap_form_for @person do |f|
+  - if @person.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@person.errors.count, "error")} prohibited this person from being saved:"
+      ul
+        - @person.errors.full_messages.each do |message|
+          li = message
+
+  = f.text_field :dead_name, :label => "Your Dead Name", :placeholder => "Ex. John Harry Smith"
+  = f.text_field :real_name, :label => "Your Real Name", :placeholder => "Ex. Jane Harriet Smith"
+  div class="your_true_gender"
+    = f.label "Your True Gender"
+    = f.radio_button :real_gender, 'female', label: "Female", checked: true
+    = f.radio_button :real_gender, 'male', label: "Male"
+  br
+  div class="state_info"
+  div class="your_mailing_address"
+    h4 Your Mailing Address
+    div class="bg-info"
+      = "You must be able to receive mail here. Final identity documents will arrive here."
+  div class="fluid-row"
+    div class="span8"
+      = f.text_field :address, :placeholder => "Your Address"
+      = f.text_field :state, :placeholder => "California", :value => "California"
+  div class="fluid-row"
+    div class="span4"
+      = f.text_field :city, :placeholder => "Ex. Santa Ana"
+  div class="fluid-row"
+    div class="span4"
+      = f.text_field :zip, :placeholder => "Ex. 92701"
+  br
+  div class="your_mailing_address"
+    h4 Finding Your Court
+    div class="bg-info"
+      = "For the state of California you can find your court on this website. "
+      = link_to "Court Search", "http://www.courts.ca.gov/find-my-court.htm"
+  br
+  = f.text_field :court_address, :placeholder => "Ex. 700 Civic Center Dr. West"
+  = f.text_field :court_location, :placeholder => "Ex. Santa Ana, CA"
+  = f.text_field :court_name, :placeholder => "Ex. Criminal Justice Center"
+  br
+  = f.date_select :dob, :label => "Date of Birth", :start_year => 1900, :end_year => Time.now.year
+  = f.text_field :born, :label => "City of Birth", :placeholder => "Ex. Tulsa, OK"
+  = f.text_field :telephone, :placeholder => "(555) 555-1212"
+  = f.text_field :email, :placeholder => "Your Email"
+  br
+  = f.submit :value => "Christen Me!", :class => "btn btn-primary btn-lg"
+
