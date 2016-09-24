@@ -2,6 +2,10 @@ class PeopleController < InheritedResources::Base
 
   def show
     @person = Person.find(params[:id])
+    ActiveRecord::Base.transaction do
+      DocumentMaker.enqueue(@person.id)
+    end
+    @person
   end
 
   private
