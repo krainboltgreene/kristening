@@ -33,7 +33,7 @@ module Document
       outfile = outdir.join(filename).to_s
       png.write(outfile)
       puts "Writing: #{outfile}"
-      return outfile
+      convert_to_pdf(outfile)
     end
 
     def self.open_source_png(file)
@@ -333,19 +333,19 @@ module Document
       Zip::File.open(zip_path, Zip::File::CREATE) do |zipfile|
         nc200_file = create_nc200(person, dirpath)
         zipfile.add("nc200.pdf", nc200_file)
-        #FileUtils.rm nc200_file
+        FileUtils.rm nc200_file
         nc110_file = create_nc110(person, dirpath)
         zipfile.add("nc110.pdf", nc110_file)
-        #FileUtils.rm nc110_file
+        FileUtils.rm nc110_file
         cm010_file = create_cm010(person, dirpath)
         zipfile.add("cm010.pdf", cm010_file)
-        #FileUtils.rm cm010_file
+        FileUtils.rm cm010_file
         nc220_file = create_nc220(person, dirpath)
         zipfile.add("nc220.pdf", nc220_file)
-        #FileUtils.rm nc220_file
+        FileUtils.rm nc220_file
         nc230_file = create_nc230(person, dirpath)
         zipfile.add("nc230.pdf", nc230_file)
-        #FileUtils.rm nc230_file
+        FileUtils.rm nc230_file
       end
       return zip_path
     end

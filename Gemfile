@@ -35,3 +35,4 @@ gem 'bootstrap_form'
 gem "slim-rails"
 gem 'rails_layout'
 gem 'rubyzip'
+gem "figaro"
