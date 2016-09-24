@@ -1,2 +1,17 @@
 p#notice = notice
 
+h1
+  = @person.real_name
+
+= image_tag "youre_awesome.png", :width => "300", :class => "img-responsive"
+
+style
+  = "main { background-color: white; margin: 25px; padding: 25px; }"
+
+br
+br
+p
+  Your name and gender identity documents will arrive at #{@person.email} in the next few minutes. If you don't receive them please message 
+  = link_to "Janet", "mailto: jjeffus@gmail.com"
+  = " and let her know."
+
