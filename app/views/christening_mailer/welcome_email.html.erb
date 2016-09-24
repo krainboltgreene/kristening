@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Congratulations <%= @person.real_name %>!</h1>
+    <p>
+    You have successfully completed the first step in your legal identity change.
+    Your real identity documents are attached. You are walking a path on a great
+    adventure ahead. Sometimes there will be roadblocks and surprises but just
+    remember it's a ride that will eventually bring you to a new and wonderful life.
+    </p>
+    <p>
+    <%= Document::California.guide_html %>
+    </p>
+    <p>
+    If you run into any issues with this service please create an issue on the Github
+    issue tracker <a href="https://github.com/jjeffus/kristening/issues">page here</a>.
+    Sometimes properly filled out forms are returned by overworked or unfriendly courts.
+    Just remember to be polite and record every suggestion. We will do our best to
+    make this service work instantly for our brothers and sisters.
+    </p>
+    <p>
+    Love,<br />
+    Janet Evelyn Asteria
+    </p>
+  </body>
+</html>
