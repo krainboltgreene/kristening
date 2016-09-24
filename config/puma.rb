@@ -13,7 +13,7 @@ threads threads_count, threads_count
 if ENV.fetch("RAILS_ENV") == "development"
   bind "tcp://0.0.0.0:3000"
 else
-  bind "unix:///tmp/kristen.sock"
+  bind "tcp://127.0.0.1:9292"
 end
 
 # port        ENV.fetch("PORT") { 3000 }
