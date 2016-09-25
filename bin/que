@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+source /home/kristen/.env
+cd /home/kristen/kristening/current/
+bundle exec rake que:work
