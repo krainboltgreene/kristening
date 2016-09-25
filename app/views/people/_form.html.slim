@@ -31,6 +31,7 @@ div class="bg-info" style="margin: 25px; padding: 25px; margin-top: 0px;"
     h4 Your Mailing Address
     div class="bg-info"
       = "You must be able to receive mail here. Final identity documents will arrive here."
+  br
   div class="fluid-row"
     div class="span8"
       = f.text_field :address, :placeholder => "Your Address"
@@ -57,5 +58,4 @@ div class="bg-info" style="margin: 25px; padding: 25px; margin-top: 0px;"
   = f.text_field :telephone, :placeholder => "(555) 555-1212"
   = f.text_field :email, :placeholder => "Your Email"
   br
-  = f.submit :value => "Christen Me!", :class => "btn btn-primary btn-lg"
-
+  = f.submit :value => "Christen Me!", :class => "btn btn-primary btn-lg", :style => "margin-bottom: 25px"

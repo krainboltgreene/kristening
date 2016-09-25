@@ -31,8 +31,9 @@ html
     header
       == render 'layouts/navigation'
     main[role="main"]
-      == render 'layouts/messages'
-      == yield
+      div class="mainspace"
+        == render 'layouts/messages'
+        == yield
     footer
       div style="width 300px; margin: 0px auto;"
         = "Help us with this project on "

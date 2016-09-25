@@ -38,9 +38,17 @@ input[name="commit"] {
   padding: 15px;
 }
 main {
+  background-color: transparent;
   max-width: 800px;
+  min-width: 300px;
   margin: 0px auto;
   font-family: 'Coming Soon', sans-serif;
+}
+.mainspace {
+  background-color: #DDD;
+  max-width: 750px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 body {
   background-image: url(/img/symphony.png);
